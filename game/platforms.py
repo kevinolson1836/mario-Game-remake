@@ -4,7 +4,8 @@ import pygame
 class platform:
     #  draw platform
     def draw(self):
-        self.rect = pygame.draw.rect(self.screen, [0,0,0], pygame.Rect(self.xpos, self.ypos, self.xwidth, self.ywidth))
+        self.rect = pygame.draw.rect(self.screen, [0,0,0], pygame.Rect(self.xpos, self.ypos-20, self.xwidth, self.ywidth))
+        # pygame.display.update()
 
     # init platform vars
     def __init__(self, name, screen, xpos, ypos, xwidth, ywidth):
@@ -38,6 +39,10 @@ class platform:
     def print_name(self):
         print(self.name)
 
+    # return name
+    def get_name(self):
+        return(self.name)
+    
     # plat x,y cords
     def get_pos(self):
         return(self.xpos, self.ypos)
